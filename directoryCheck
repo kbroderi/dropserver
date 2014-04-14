@@ -1,0 +1,28 @@
+import os, sys, subprocess
+
+def find_files(path):
+    result = []
+    direct = []
+    fil = []
+    for root, dirs, files in os.walk(path):
+        if dirs not in direct:
+            direct.append(dirs)
+        if files not in fil:
+            fil.append(files)
+
+    print direct
+    print fil
+
+    return
+
+print os.getcwd
+#os.mkdir('D:\OneDir\Files')
+#os.renames('D:\OneDir\Files', 'D:\OneDir\AlltheFile')
+#os.remove()
+#os.rmdir()
+mydir = 'D:\OneDir'
+
+dirs = os.listdir(mydir)
+#for file in dirs:
+    #print file
+find_files(mydir)
